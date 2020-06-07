@@ -1,14 +1,13 @@
 import express from 'express'
+import routes from './routes'
+import path from 'path'
 
 const app = express()
 
-app.get('/users', (request, response) => {
-    response.json([
-        'Ligia',
-        '🙂',
-        'Diego',
-        '🌎'
-    ])
-})
+app.use(express.json())
+app.use(routes)
+
+app.use('/uploads/', express.static(path.resolve(__dirname, '..', 'uploads')))
+//serve p acessar aqs estáticos como imgs
 
 app.listen(3333)
