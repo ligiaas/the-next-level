@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import knex from '../database/connection'
 
-const root = 'http://localhost:3333'
+const root = 'http://192.168.0.19:3333'
 
 class ItemsController {
     async index(request: Request, response: Response) {
